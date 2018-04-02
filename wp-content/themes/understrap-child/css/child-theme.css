@@ -10474,7 +10474,7 @@ a.skip-link {
   z-index: 1;
   top: 0;
   left: 0;
-  background-color: blue;
+  background-color: #111;
   opacity: 0.9;
   overflow-x: hidden;
   -webkit-transition: 0.5s;
@@ -10502,3 +10502,17 @@ a.skip-link {
     padding-top: 15px; }
     .sidenav a {
       font-size: 18px; } }
+
+.logoSml {
+  width: 200px !important;
+  height: auto; }
+
+.container {
+  max-width: 97% !important; }
+
+.site-main {
+  border: 1px solid #f7faff;
+  padding: 1em;
+  background-color: rgba(255, 255, 255, 0.7);
+  max-width: 75%;
+  margin: auto; }

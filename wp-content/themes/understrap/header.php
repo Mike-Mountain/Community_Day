@@ -32,7 +32,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 		<a class="skip-link screen-reader-text sr-only" href="#content"><?php esc_html_e( 'Skip to content', 'understrap' ); ?></a>
 
-		<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+		<nav class="navbar navbar-expand">
 
 		<?php if ( 'container' == $container ) : ?>
 			<div class="container" >
@@ -53,7 +53,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 					)
 				); ?>
 			</div>
-			<span style="font-size:30px;cursor:pointer" id="openNavBtn" onclick="openNav()">&#9776;</span>
+			<span style="font-size:30px;cursor:pointer;color:white;" id="openNavBtn" onclick="openNav()">&#9776;</span>
 			<?php if ( 'container' == $container ) : ?>
 			</div><!-- .container -->
 			<?php endif; ?>
@@ -62,15 +62,26 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 	</div><!-- .wrapper-navbar end -->
 	<script>
-		function openNav() {
-			document.getElementById("mySidenav").style.width = "100%";
-			document.getElementById("openNavBtn").style.display = "none !important;";
+		var width = window.innerWidth
+		|| document.documentElement.clientWidth
+		|| document.body.clientWidth;
+		// var h = window.innerHeight
+		// || document.documentElement.clientHeight
+		// || document.body.clientHeight;
+
+		if (width < 700) {
+			function openNav() {
+				document.getElementById("mySidenav").style.width = "100%";
+				document.getElementById("openNavBtn").style.display = "none !important;";
+			}
+		} else {
+			function openNav() {
+				document.getElementById("mySidenav").style.width = "25%";
+				document.getElementById("openNavBtn").style.display = "none !important;";
+			}
 		}
 
 		function closeNav() {
 			document.getElementById("mySidenav").style.width = "0";
 		}
 	</script>
-	<style>
-		
-	</style>

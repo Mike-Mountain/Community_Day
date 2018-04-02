@@ -2,18 +2,43 @@
 
 // variable declaration in SCSS we use variables to keep style clean and easy to modify
 // if we use this variable to say 50 rules and want to change the color, we would change only this variable.
-$mycolor: #67A6A6;
-
-// in SCSS we nest
-nav {
-    background-color: $mycolor !important;
-  // in CSS this was selected by nav a
-  a {
-    color: $mycolor !important;
-    // change a on hover example
-    // in CSS this was selected by nav a:hover
-    &:hover {
-      color: $mycolor !important;
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: $sideNavBg;
+    opacity: 0.9;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #ededed;
+        display: block;
+        transition: 0.3s;
+        &:hover {
+            color: white;
+        }
     }
-  }
+    .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+    }
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+        a {
+            font-size: 18px;
+        }
+    }
 }
